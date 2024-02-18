@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-[400px] bg-white rounded-lg shadow-md flex flex-col justify-between">
-    <img class="w-full h-2/3 object-cover" v-if="props.item" :src="props.item?.image"/>
+    <img class="w-full h-2/3 object-contain" v-if="props.item" :src="props.item?.image"/>
     <div class="px-4">
       <div class="hover:text-blue-600 cursor-pointer text-lg text-gray-600 font-medium" @click="goProduct(props.item.id)" >{{props.item.title}}</div>
     </div>

@@ -34,11 +34,11 @@ export const useMainStore = defineStore("main", () => {
     useGet({
       url: `api/products/?limit=${products_limit.value}&offset=${products_offset.value}`,
     }).then((res) => {
-      console.log(res.data);
-      products.value = res.data.results;
+      products.value = products.value.concat(res.data.results);
       products_count.value = res.data.count;
     });
   }
+
   function getProductById(id) {
     useGet({ url: `api/products/${id}` }).then((res) => {
       console.log(res);
@@ -58,6 +58,6 @@ export const useMainStore = defineStore("main", () => {
     getProductsByBrands,
     brands_products,
     brands_products_count,
-    getProductById
+    getProductById,
   };
 });
